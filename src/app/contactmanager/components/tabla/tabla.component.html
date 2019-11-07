@@ -1,0 +1,51 @@
+<h4>Diagnostico</h4>
+
+<div class="margen">
+    <mat-form-field>
+      <mat-select placeholder="Seleccione un dominio">
+        <mat-option *ngFor="let domi of Vdominios" [value]="domi" (click)="mandar(domi)">
+          {{ domi }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <mat-select placeholder="Seleccione un diagnostico">
+        <mat-option *ngFor="let diagno of Vdiagnosticos" [value]="diagno" (click)="mandar2(diagno)">
+          {{ diagno.diagnosticName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    
+    <mat-card-content>
+        <mat-tab-group>
+           <mat-tab label="Caracateristicas">
+              <ng-template mat-tab-label>
+                  <mat-icon>next_week</mat-icon>
+                </ng-template>
+              <div>
+                  <p >  {{ Vdefinicion }}</p>
+                <ul>
+                  <li *ngFor="let diagno of Vcaracteristicas">{{ diagno }}</li>
+                </ul>
+              </div>
+           </mat-tab> 
+           <mat-tab label="Noc" > 
+           <p>esta2 </p>
+          </mat-tab> 
+          <mat-tab label="Nic">
+            <p>esta 3</p>
+          </mat-tab> 
+        </mat-tab-group>
+      </mat-card-content>
+    </div>
+
+  <mat-dialog-actions>
+      <button mat-button color="primary" (click)="save()">
+        <mat-icon>save</mat-icon> Guardar
+      </button>
+      <button mat-button color="primary" (click)="dismiss()">
+          <mat-icon>cancel</mat-icon> Cancelar
+        </button>
+</mat-dialog-actions>

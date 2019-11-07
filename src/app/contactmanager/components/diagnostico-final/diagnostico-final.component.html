@@ -1,0 +1,81 @@
+
+<div class="margen">
+ <form class="example-form" novalidate [formGroup]="formulario">
+
+<mat-form-field class="example-full-width">
+  <mat-select id="domainName" formControlName="domainName" placeholder="Seleccione un dominio">
+    <mat-option *ngFor="let domi of Vdominios" [value]="domi" (click)="mandar(domi)">
+      {{ domi }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<br>
+
+<mat-form-field  class="example-full-width">
+  <mat-select id="diagnostic" formControlName="diagnostic" placeholder="Seleccione un diagnostico">
+    <mat-option *ngFor="let diagno of Vdiagnosticos" [value]="diagno" (click)="mandar2(diagno)">
+      {{ diagno.diagnosticName }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+<mat-card-content>
+    <mat-tab-group>
+
+       <mat-tab label="Caracateristicas">
+         <div class="patron"> 
+        <p> <a class="negro">Definicion:</a>  {{ Vdefinicion }} </p>
+          <div>
+            <ul>
+              <li *ngFor="let diagno of Vcaracteristicas">{{ diagno }}</li>
+            </ul>
+          </div>
+        </div>
+       </mat-tab> 
+    
+      
+       <mat-tab label="Noc" > 
+        <div class="nocMargen">
+        <mat-form-field class="example-full">
+          <mat-select id="noc" formControlName="noc" placeholder="Seleccione un noc">
+            <mat-option *ngFor="let noc of Vnoc" [value]="noc" (click)="nocMetodo(noc)">
+              {{ noc.nocName }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+<br>
+             <div>
+                <ul>
+                  <li *ngFor="let ind of Vindicadores">{{ ind.indicatorDescription }}</li>
+                </ul>
+             </div>
+      </div>
+      </mat-tab> 
+
+      <mat-tab label="Nic">
+          <mat-form-field>
+              <mat-select id="nicName" formControlName="nic" placeholder="Seleccione un nombre">
+                <mat-option *ngFor="let nic of Vnic" [value]="nic" (click)="nicMetodo(nic)" >
+                  {{ nic.nicName }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>  
+          
+            <br>
+             <div>
+                <ul>
+                  <li *ngFor="let act of actividades">{{ act}}</li>
+                </ul>
+             </div>
+
+      </mat-tab> 
+
+    </mat-tab-group>
+  </mat-card-content>
+
+  <button mat-fab class="david" color="primary" (click)="guardar()"><mat-icon>save</mat-icon></button>
+  </form>
+</div>

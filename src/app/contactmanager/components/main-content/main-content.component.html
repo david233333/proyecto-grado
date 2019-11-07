@@ -1,0 +1,36 @@
+<div *ngIf="!user">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div *ngIf="user">
+    <mat-card>
+      <mat-card-header >
+        <mat-icon mat-card-avatar svgIcon="{{avatars}}"></mat-icon>
+        <mat-card-title >
+          <h2>{{ user.userName }} {{ user.lastName }}</h2>
+        </mat-card-title>
+        <mat-card-subtitle>
+          Tipo : {{ user.userRol }}
+        </mat-card-subtitle>
+        <mat-card-subtitle>
+          Documento : {{ user.documentNumber }}
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-tab-group>
+           <mat-tab label="Capcidad Autocuidado">
+             <app-notes [caa]="auto"></app-notes>
+           </mat-tab> 
+           <mat-tab label="Framigham" > 
+            <app-framingham [framighamV]="framig"></app-framingham>
+          </mat-tab> 
+          <mat-tab label="Diagnostico">
+            <app-diagnostico-final [framighamV]="framig"> </app-diagnostico-final>
+          </mat-tab> 
+          <mat-tab label="Notificaciones">
+            <app-alarmas [alar]="emails" [framighamV]="framig"  ></app-alarmas>
+          </mat-tab> 
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  

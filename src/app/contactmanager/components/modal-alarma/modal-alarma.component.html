@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Enviar Alarma</h2>
+<mat-dialog-content>
+
+  <form class="example-form" novalidate   [formGroup]="formulario">
+      
+   <mat-form-field class="example-full-width">
+      <input matInput placeholder="Asunto" id="tituloEmail" formControlName="tituloEmail" >
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Descripcion" id="cuerpoEmail" formControlName="cuerpoEmail"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-button color="primary" (click)="save()">
+      <mat-icon>send</mat-icon> Enviar
+    </button>
+    <button mat-button color="primary" (click)="dismiss()">
+      <mat-icon>cancel</mat-icon> Cancel
+    </button>
+</mat-dialog-actions>

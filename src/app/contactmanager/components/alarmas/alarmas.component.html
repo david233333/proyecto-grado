@@ -1,0 +1,11 @@
+<button mat-fab class="david" color="primary" (click)="openDialog()"><mat-icon>mail_outline</mat-icon></button>
+
+<div *ngFor="let ala of alar">
+<mat-card class="decorar" > <mat-icon>alarm</mat-icon>  {{ala.tituloEmail}}
+<mat-card-subtitle class="color">{{ ala.date |date:"medium" }} </mat-card-subtitle>   
+<mat-card-content class="color">{{ ala.cuerpoEmail}} </mat-card-content>
+</mat-card>
+</div>
+
+
+

@@ -14,7 +14,7 @@
 </mat-dialog-content>
 
 <mat-dialog-actions>
-    <button mat-button color="primary" (click)="save()">
+    <button mat-button [disabled]="!formulario.valid" color="primary" (click)="save()">
       <mat-icon>send</mat-icon> Enviar
     </button>
     <button mat-button color="primary" (click)="dismiss()">

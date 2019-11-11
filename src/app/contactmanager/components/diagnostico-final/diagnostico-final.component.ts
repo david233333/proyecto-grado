@@ -112,9 +112,10 @@ export class DiagnosticoFinalComponent implements OnInit {
 
   guardar(){
     this.dx.EnviarFinal(this.formulario.value).subscribe(data => { 
-      console.log("si se guardo el diagnostico final",this.formulario.value);
+      console.log("si se guardo el diagnostico final f",this.formulario);
       console.log("si se guardo el diagnostico final",data);
       alert("se guardo correctamente!!");
+      window.location.reload()
    })   
   }
 

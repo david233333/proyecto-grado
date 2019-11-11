@@ -27,6 +27,8 @@ import { nicService } from './services/nics.service';
 import { DiagnosticoFinalService } from './services/diagnosticoFinal.service';
 import { VisualizarComponent } from './components/visualizar/visualizar.component';
 import { VisualizarService } from './services/visualizar.service';
+import { RespuestasFinalesComponent } from './components/respuestas-finales/respuestas-finales.component';
+import { respuestasFinalesServices } from './services/respuestasFinales.service';
 
 
 
@@ -59,7 +61,7 @@ const routes: Routes = [
     FraminghamComponent, 
     AlarmasComponent,
     ModalAlarmaComponent, 
-    DiagnosticoFinalComponent, VisualizarComponent],
+    DiagnosticoFinalComponent, VisualizarComponent, RespuestasFinalesComponent],
     
     entryComponents:[
       NewConctactDialogComponent,
@@ -69,6 +71,6 @@ const routes: Routes = [
 
     ],
 
-   providers: [UserService,AutoCuidadoService,FraminghamService,AlarmasService,DominiosService,DiagnosticoService,NocsService,mobileService,nicService,DiagnosticoFinalService,VisualizarService] 
+   providers: [UserService,AutoCuidadoService,FraminghamService,AlarmasService,DominiosService,DiagnosticoService,NocsService,mobileService,nicService,DiagnosticoFinalService,VisualizarService,respuestasFinalesServices] 
 })
 export class ContactmanagerModule { }

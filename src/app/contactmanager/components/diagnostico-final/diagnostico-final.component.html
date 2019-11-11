@@ -76,6 +76,6 @@
     </mat-tab-group>
   </mat-card-content>
 
-  <button mat-fab class="david" color="primary" (click)="guardar()"><mat-icon>save</mat-icon></button>
+  <button mat-fab class="david" [disabled]="!formulario.valid" color="primary" (click)="guardar()"><mat-icon>save</mat-icon></button>
   </form>
 </div>

@@ -10,7 +10,8 @@ export class DiagnosticoService {
 
   constructor(private http: HttpClient) { }
 
-  diagnosticosUrl = 'http://localhost:8080/selfcare/diagnostic/';
+  //diagnosticosUrl = 'http://localhost:8080/selfcare/diagnostic/';
+  diagnosticosUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/diagnostic/';
 
   getDiganosticos(domainName: string): Observable<diagnostico[]> {
     return this.http.get<diagnostico[]>(this.diagnosticosUrl+domainName)

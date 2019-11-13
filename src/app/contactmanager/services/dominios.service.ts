@@ -9,7 +9,8 @@ export class DominiosService {
 
   constructor(private http: HttpClient) { }
 
-  dominiosUrl = 'http://localhost:8080/selfcare/domains';
+  //dominiosUrl = 'http://localhost:8080/selfcare/domains';
+  dominiosUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/domains';
 
   getDominios(): Observable<dominios[]> {
     return this.http.get<dominios[]>(this.dominiosUrl)

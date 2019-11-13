@@ -9,7 +9,8 @@ export class NocsService {
 
   constructor(private http: HttpClient) { }
 
-  nocsUrl = 'http://localhost:8080/selfcare/noc/';
+  //nocsUrl = 'http://localhost:8080/selfcare/noc/';
+  nocsUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/noc/';
 
   getNocsById(id: String): Observable<nocs[]> {
     return this.http.get<nocs[]>(this.nocsUrl+id)

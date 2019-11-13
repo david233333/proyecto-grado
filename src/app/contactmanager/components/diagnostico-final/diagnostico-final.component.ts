@@ -54,7 +54,7 @@ export class DiagnosticoFinalComponent implements OnInit {
     })
   }
 
-  Dominios(){    
+  public Dominios(){    
      this.dominios.getDominios().subscribe(data=>{ 
        this.Vdominios = data;
        console.log("son los dominios",this.Vdominios); 

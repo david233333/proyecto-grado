@@ -38,7 +38,7 @@ export class UserService {
   }
 
   loadAll() {
-    const usersUrl = 'http://localhost:8080/selfcare/users';
+    const usersUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/users';
 
     return this.http.get<User[]>(usersUrl)
       .subscribe(data => {

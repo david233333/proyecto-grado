@@ -11,7 +11,8 @@ export class nicService {
   
   constructor(private http: HttpClient) { }
 
-  inboxUrl = 'http://localhost:8080/selfcare/nic/';
+  //inboxUrl = 'http://localhost:8080/selfcare/nic/';
+  inboxUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/nic/';
  
 
   getNicsId(id: String): Observable<nic[]> {

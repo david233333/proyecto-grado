@@ -8,7 +8,9 @@ export class FraminghamService {
 
   constructor(private http: HttpClient) { }
 
-  CaaUrl = 'http://localhost:8080/selfcare/framingham/';
+  //CaaUrl = 'http://localhost:8080/selfcare/framingham/';
+  CaaUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/framingham/';
+
 
   getFramiById(id: String): Observable<framinhgam> {
     return this.http.get<framinhgam>(this.CaaUrl+id)

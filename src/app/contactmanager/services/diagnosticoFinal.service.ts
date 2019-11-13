@@ -11,7 +11,8 @@ export class DiagnosticoFinalService {
 
   constructor(private http: HttpClient) { }
 
-  FinalUrl = 'http://localhost:8080/selfcare/finalDx';
+ // FinalUrl = 'http://localhost:8080/selfcare/finalDx';
+  FinalUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/caa/';
 
   EnviarFinal(cuerpo: dfx) : Observable<dfx[]>{
     return this.http.post<dfx[]>(this.FinalUrl,cuerpo);

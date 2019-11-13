@@ -9,8 +9,8 @@ export class AlarmasService {
   
   constructor(private http: HttpClient) { }
 
-  inboxUrl = 'http://localhost:8080/selfcare/inboxWeb/';
- 
+  //inboxUrl = 'http://localhost:8080/selfcare/inboxWeb/';
+  inboxUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/inboxWeb/'
 
   getEmailId(id: String): Observable<alarma> {
     return this.http.get<alarma>(this.inboxUrl+id)

@@ -25,7 +25,6 @@ import { NocsService } from './services/nocs.service';
 import { mobileService } from './services/inboxMobile.service';
 import { nicService } from './services/nics.service';
 import { DiagnosticoFinalService } from './services/diagnosticoFinal.service';
-import { VisualizarComponent } from './components/visualizar/visualizar.component';
 import { VisualizarService } from './services/visualizar.service';
 import { RespuestasFinalesComponent } from './components/respuestas-finales/respuestas-finales.component';
 import { respuestasFinalesServices } from './services/respuestasFinales.service';
@@ -61,7 +60,7 @@ const routes: Routes = [
     FraminghamComponent, 
     AlarmasComponent,
     ModalAlarmaComponent, 
-    DiagnosticoFinalComponent, VisualizarComponent, RespuestasFinalesComponent],
+    DiagnosticoFinalComponent, RespuestasFinalesComponent],
     
     entryComponents:[
       NewConctactDialogComponent,

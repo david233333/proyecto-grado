@@ -29,8 +29,10 @@
           <mat-tab label="Notificaciones">
             <app-alarmas [alar]="emails" [framighamV]="framig"  ></app-alarmas>
           </mat-tab> 
+          <mat-tab label="Respuestas Finales">
+            <app-respuestas-finales [cedula]="user.documentNumber"></app-respuestas-finales>
+          </mat-tab> 
         </mat-tab-group>
       </mat-card-content>
     </mat-card>
   </div>
-  

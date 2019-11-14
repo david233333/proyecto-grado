@@ -1,3 +1,32 @@
-<p>
-  respuestas-finales works!
-</p>
+<div class="jorge">
+      <div class="card" style="margin: 30px;">
+        <div class="card-header" >
+          <h3>Respuestas Consulta de Urgencia</h3>
+        </div>
+        <table class="table table-bordered">
+          <thead class="thead">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Alarmas</th>
+              <th scope="col">Preguntas</th>
+              <th scope="col">Respuesta SI/NO</th>
+              <th scope="col">Hace Cuánto</th>
+ 
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pregunta of preguntaList">
+              <th scope="row">{{ pregunta.question }} </th>
+              <th scope="row">{{ getAlarma( pregunta.question) }} </th>
+              <td>{{ getPregunta (pregunta.question ) }}</td>
+              <td>{{ getRespuesta(pregunta.optionYesNo ) }}</td>
+              <td>{{ getHaceCuanto(pregunta.optionYesNo ) }}</td>
+           
+            </tr>
+            </tbody>
+          </table>
+          </div>
+      
+      <br>
+      </div>
+

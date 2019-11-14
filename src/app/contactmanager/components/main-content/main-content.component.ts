@@ -12,8 +12,6 @@ import { AlarmasService } from '../../services/alarmas.service';
 import { alarma } from '../../models/alarmas';
 import { VisualizarService } from '../../services/visualizar.service';
 
-
-
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
@@ -29,10 +27,11 @@ export class MainContentComponent implements OnInit {
   visus: any[] = [];
   constructor(private route: ActivatedRoute, private service: UserService, 
     private caa: AutoCuidadoService, private frami: FraminghamService,
-    private alarma: AlarmasService, private mobile: mobileService, private visu : VisualizarService) { }
+    private alarma: AlarmasService, private mobile: mobileService, private visu : VisualizarService
+    ) { }
 
   ngOnInit() {
- 
+
     this.route.params.subscribe(params => {
       let id = params['id'];
       this.CaaById(id);
@@ -56,7 +55,7 @@ export class MainContentComponent implements OnInit {
 
   CaaById(id:number){    
    let idP = id;
-   let convert = idP.toString();
+   let convert = id.toString();
     this.caa.getCaayById(convert)
     .subscribe(data=>{
       this.auto = data;

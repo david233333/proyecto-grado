@@ -10,7 +10,7 @@ export class mobileService {
   
   constructor(private http: HttpClient) { }
 
-  inboxUrl = 'http://localhost:8080/selfcare/inboxMobile/';
+  inboxUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/inboxMobile';
  
 
   getEmailId(id: String): Observable<alarma> {
@@ -18,7 +18,7 @@ export class mobileService {
   }
   
   EnviarEmail(message: mobile ) : Observable<mobile>{
-    const Url = 'http://localhost:8080/selfcare/email';
+    const Url = 'https://back-selfcareapp.herokuapp.com/selfcare/email';
     return this.http.post<mobile>(Url,message);
   }
  // return this.http.post('http://10.0.1.19/login',{email, password}, {responseType: 'text'})

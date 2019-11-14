@@ -20,17 +20,17 @@
            <mat-tab label="Capcidad Autocuidado">
              <app-notes [caa]="auto"></app-notes>
            </mat-tab> 
-           <mat-tab label="Framigham" > 
+           <mat-tab label="Framingham" > 
             <app-framingham [framighamV]="framig"></app-framingham>
           </mat-tab> 
           <mat-tab label="Diagnostico">
             <app-diagnostico-final [framighamV]="framig"> </app-diagnostico-final>
           </mat-tab> 
-          <mat-tab label="Notificaciones">
+          <!--<mat-tab label="Notificaciones">
             <app-alarmas [alar]="emails" [framighamV]="framig"  ></app-alarmas>
-          </mat-tab> 
+          </mat-tab> -->
           <mat-tab label="Respuestas Finales">
-            <app-respuestas-finales [cedula]="user.documentNumber"></app-respuestas-finales>
+            <app-respuestas-finales [cedula]="user.documentNumber" [framighamV]="framig" ></app-respuestas-finales>
           </mat-tab> 
         </mat-tab-group>
       </mat-card-content>

@@ -16,9 +16,9 @@ export class AlarmasComponent implements OnInit {
 
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(/*public dialog: MatDialog*/) { }
 
-  openDialog(): void {
+  /*openDialog(): void {
     let dialogRef = this.dialog.open(ModalAlarmaComponent, {
       width: '400px',
       data : {
@@ -28,7 +28,7 @@ export class AlarmasComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
-  }
+  }*/
 
   ngOnInit() {
 

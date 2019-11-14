@@ -1,32 +1,32 @@
 <div>
         <div class="card" style="margin: 20px"> 
             <div class="card-header" >
-                <h3>Framigham Resultados</h3>
+                <h3>Framingham Resultados</h3>
             </div>
         <table class="table table-bordered">
             <thead class="thead">
-              <tr>
+              <tr style="text-align: center;">
                 <th scope="col">#</th>
-                <th scope="col">Documento</th>
-                <th scope="col">UserGender</th> 
-                <th scope="col">UserAge</th>
-                <th scope="col">paSistolica</th> 
+                <th scope="col">n.º Documento</th>
+                <th scope="col">Genero</th> 
+                <th scope="col">Edad</th>
+                <th scope="col">Presion arterial sistolica</th> 
                 <th scope="col">Colesterol</th>
                 <th scope="col">Fuma</th>  
-                <th scope="col">hdl</th> 
+                <th scope="col">HDL</th> 
                 <th scope="col">Resultado</th> 
                
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr style="text-align: center;">
                 <th scope="row">1</th>
                 <td>{{ framighamV.documentNumber }}</td>
                 <td>{{ framighamV.userGender }}</td>
                 <td>{{ framighamV.userAge }}</td>
                 <td>{{ framighamV.paSistolica }}</td>           
                 <td>{{ framighamV.colesterol }}</td>
-                <td>no</td>
+                <td> {{ variable }}</td>
                 <td>{{ framighamV.hdl }}</td>
                 <th>{{ framighamV.result }}</th>
               

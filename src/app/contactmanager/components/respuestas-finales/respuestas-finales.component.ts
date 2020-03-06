@@ -1,11 +1,11 @@
 import { MatDialog } from '@angular/material';
 import { Component, OnInit, Input } from '@angular/core';
-import { respuestasFinalesServices } from '../../services/respuestasFinales.service';
-import { RespuestaFinal } from '../../models/respuestaAlarma';
-import { preguntaList } from '../../models/preguntaList';
+import { respuestasFinalesServices } from '../../infraestructure/respuestasFinales.service';
+import { RespuestaFinal } from '../../domain/models/respuestasAlarmas/entity/respuestaAlarma';
+import { preguntaList } from '../../domain/models/listaPreguntas/entity/preguntaList';
 import { Observable } from 'rxjs/Observable';
-import { preguntaAlarma } from '../../models/preguntasAlarma';
-import { framinhgam } from '../../models/framingham';
+import { preguntaAlarma } from '../../domain/models/preguntasAlarmas/entity/preguntasAlarma';
+import { framinhgam } from '../../domain/models/framingham/entity/framingham';
 import { ModalAlarmaComponent } from '../modal-alarma/modal-alarma.component';
 
 @Component({

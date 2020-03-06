@@ -1,7 +1,7 @@
 import { Component, OnInit, NgZone, ViewChild } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../infraestructure/user/user.service';
 import { Observable } from 'rxjs/Observable';
-import { User } from '../../models/user';
+import { User } from '../../domain/models/user/entity/user';
 import { Router } from '@angular/router';
 import { MatSidenav } from '@angular/material';
 

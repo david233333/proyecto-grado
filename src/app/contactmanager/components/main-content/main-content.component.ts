@@ -1,16 +1,16 @@
-import { mobileService } from './../../services/inboxMobile.service';
+import { mobileService } from '../../infraestructure/mobile/inboxMobile.service';
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { User } from '../../models/user';
-import { UserService } from '../../services/user.service';
-import { AutoCuidadoService } from '../../services/auto-cuidado.service';
-import { Caa } from '../../models/caa';
-import { FraminghamService } from '../../services/framingham.service';
-import { framinhgam } from '../../models/framingham';
-import { AlarmasService } from '../../services/alarmas.service';
-import { alarma } from '../../models/alarmas';
-import { VisualizarService } from '../../services/visualizar.service';
+import { User } from '../../domain/models/user/entity/user';
+import { UserService } from '../../infraestructure/user/user.service';
+import { AutoCuidadoService } from '../../infraestructure/respuestasAutoCuidado/auto-cuidado.service';
+import { Caa } from '../../domain/models/RespuestasAutocuidado/entity/caa';
+import { FraminghamService } from '../../infraestructure/framigham/framingham.service';
+import { framinhgam } from '../../domain/models/framingham/entity/framingham';
+import { AlarmasService } from '../../infraestructure/alarmas/alarmas.service';
+import { alarma } from '../../domain/models/alarmas/entity/alarmas';
+import { VisualizarService } from '../../infraestructure/visualizar.service';
 
 @Component({
   selector: 'app-main-content',

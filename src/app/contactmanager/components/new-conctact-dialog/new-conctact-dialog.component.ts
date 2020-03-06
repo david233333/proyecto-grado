@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { User } from '../../models/user';
-import { UserService } from '../../services/user.service';
+import { User } from '../../domain/models/user/entity/user';
+import { UserService } from '../../infraestructure/user/user.service';
 
 @Component({
   selector: 'app-new-conctact-dialog',

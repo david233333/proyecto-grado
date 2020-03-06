@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 
 import { MatTableDataSource, MatPaginator } from '@angular/material';
-import { Caa } from '../../models/caa';
+import { Caa } from '../../domain/models/RespuestasAutocuidado/entity/caa';
 
 @Component({
   selector: 'app-notes',

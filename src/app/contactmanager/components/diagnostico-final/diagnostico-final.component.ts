@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DominiosService } from '../../services/dominios.service';
-import { DiagnosticoService } from '../../services/diagnosticos.service';
-import { NocsService } from '../../services/nocs.service';
-import { nicService } from '../../services/nics.service';
+import { DominiosService } from '../../infraestructure/dominios/dominios.service';
+import { DiagnosticoService } from '../../infraestructure/diagnosticos/diagnosticos.service';
+import { NocsService } from '../../infraestructure/nocs/nocs.service';
+import { nicService } from '../../infraestructure/nics/nics.service';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl, Validator } from '@angular/forms';
-import { User } from '../../models/user';
-import { framinhgam } from '../../models/framingham';
-import { DiagnosticoFinalService } from '../../services/diagnosticoFinal.service';
+import { User } from '../../domain/models/user/entity/user';
+import { framinhgam } from '../../domain/models/framingham/entity/framingham';
+import { DiagnosticoFinalService } from '../../infraestructure/diagnosticoFinal/diagnosticoFinal.service';
 
 @Component({
   selector: 'app-diagnostico-final',
@@ -43,11 +43,8 @@ export class DiagnosticoFinalComponent implements OnInit {
     this.formulario= this.fb.group({
       
       documentNumber:[this.framighamV.documentNumber,[ Validators.required,Validators.required]],
-      domainName: ['', [Validators.required, Validators.required]], 
-      //diagnosticoCode:[this.VdiagnosticCode, [Validators.required, Validators.required]],   
-      diagnostic:['', [Validators.required, Validators.required]],
-      //definicion:[this.Vdefinicion, [Validators.required, Validators.required]],
-      // nocCode:[this.nocCode, [Validators.required, Validators.required]],
+      domainName: ['', [Validators.required, Validators.required]],    
+      diagnostic:['', [Validators.required, Validators.required]],    
       noc:['', [Validators.required, Validators.required]],
       nic:['', [Validators.required, Validators.required]],
     
@@ -57,34 +54,24 @@ export class DiagnosticoFinalComponent implements OnInit {
   public Dominios(){    
      this.dominios.getDominios().subscribe(data=>{ 
        this.Vdominios = data;
-       console.log("son los dominios",this.Vdominios); 
-       for(let i of this.Vdominios){
-         
-       }
    })
    }
   
    diagnosticos(domainName:string){
     this.diagnostico.getDiganosticos(domainName).subscribe(data=>{ 
       this.Vdiagnosticos = data;
-      console.log("son los diagnosticos V",this.Vdiagnosticos);
-  
    })
   }
 
   obeternerNocs(id:string){
     this.nocs.getNocsById(id).subscribe(data=>{ 
-      console.log("llegaron los nocs",data);
       this.Vnoc = data;
-      
    })
   }
 
   obternerNics(id:string){
     this.nics.getNicsId(id).subscribe(data=>{ 
-      this.Vnic = data;
-      console.log("llegaron los nics",this.Vnic);
-
+    this.Vnic = data;
    })
   }
 
@@ -94,7 +81,6 @@ export class DiagnosticoFinalComponent implements OnInit {
   }
   
   mandar2(diagno){
-    console.log(diagno);
     this.Vdefinicion = diagno.diagnosticDefinition;
     this.Vcaracteristicas = diagno.caracteristicsList;
     this.VdiagnosticId = diagno.diagnosticId;
@@ -104,7 +90,7 @@ export class DiagnosticoFinalComponent implements OnInit {
 
   }
   nocMetodo(noc){
-    console.log("este individual",noc)
+  
     this.Vindicadores = noc.indicatorsList;
     this.nocCode = noc.nocCode;
 
@@ -112,8 +98,6 @@ export class DiagnosticoFinalComponent implements OnInit {
 
   guardar(){
     this.dx.EnviarFinal(this.formulario.value).subscribe(data => { 
-      console.log("si se guardo el diagnostico final f",this.formulario);
-      console.log("si se guardo el diagnostico final",data);
       alert("se guardo correctamente!!");
       window.location.reload()
    })   

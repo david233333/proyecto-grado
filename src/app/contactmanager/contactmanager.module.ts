@@ -8,26 +8,26 @@ import {FlexLayoutModule} from '@angular/flex-layout'
 import { MaterialModule } from '../shared/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { UserService } from './services/user.service';
+import { UserService } from './infraestructure/user/user.service';
 import { NotesComponent } from './components/notes/notes.component';
 import { NewConctactDialogComponent } from './components/new-conctact-dialog/new-conctact-dialog.component';
 import { TablaComponent } from './components/tabla/tabla.component';
-import { AutoCuidadoService } from './services/auto-cuidado.service';
+import { AutoCuidadoService } from './infraestructure/respuestasAutoCuidado/auto-cuidado.service';
 import { FraminghamComponent } from './components/framingham/framingham.component';
-import { FraminghamService } from './services/framingham.service';
+import { FraminghamService } from './infraestructure/framigham/framingham.service';
 import { AlarmasComponent } from './components/alarmas/alarmas.component';
-import { AlarmasService } from './services/alarmas.service';
+import { AlarmasService } from './infraestructure/alarmas/alarmas.service';
 import { ModalAlarmaComponent } from './components/modal-alarma/modal-alarma.component';
 import { DiagnosticoFinalComponent } from './components/diagnostico-final/diagnostico-final.component';
-import { DominiosService } from './services/dominios.service';
-import { DiagnosticoService } from './services/diagnosticos.service';
-import { NocsService } from './services/nocs.service';
-import { mobileService } from './services/inboxMobile.service';
-import { nicService } from './services/nics.service';
-import { DiagnosticoFinalService } from './services/diagnosticoFinal.service';
-import { VisualizarService } from './services/visualizar.service';
+import { DominiosService } from './infraestructure/dominios/dominios.service';
+import { DiagnosticoService } from './infraestructure/diagnosticos/diagnosticos.service';
+import { NocsService } from './infraestructure/nocs/nocs.service';
+import { mobileService } from './infraestructure/mobile/inboxMobile.service';
+import { nicService } from './infraestructure/nics/nics.service';
+import { DiagnosticoFinalService } from './infraestructure/diagnosticoFinal/diagnosticoFinal.service';
+import { VisualizarService } from './infraestructure/visualizar.service';
 import { RespuestasFinalesComponent } from './components/respuestas-finales/respuestas-finales.component';
-import { respuestasFinalesServices } from './services/respuestasFinales.service';
+import { respuestasFinalesServices } from './infraestructure/respuestasFinales.service';
 
 
 

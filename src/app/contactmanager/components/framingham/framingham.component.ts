@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { framinhgam } from '../../models/framingham';
+import { framinhgam } from '../../domain/models/framingham/entity/framingham';
 
 @Component({
   selector: 'app-framingham',

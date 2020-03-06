@@ -4,7 +4,7 @@
 
 <mat-form-field class="example-full-width">
   <mat-select id="domainName" formControlName="domainName" placeholder="Seleccione un dominio">
-    <mat-option *ngFor="let domi of Vdominios" [value]="domi" (click)="mandar(domi)">
+    <mat-option *ngFor="let domi of listaDominios" [value]="domi" (click)="obternerDominio(domi)">
       {{ domi }}
     </mat-option>
   </mat-select>
@@ -14,7 +14,7 @@
 
 <mat-form-field  class="example-full-width">
   <mat-select id="diagnostic" formControlName="diagnostic" placeholder="Seleccione un diagnostico">
-    <mat-option *ngFor="let diagno of Vdiagnosticos" [value]="diagno" (click)="mandar2(diagno)">
+    <mat-option *ngFor="let diagno of listaDiagnosticos" [value]="diagno" (click)="obtenerDiagnostico(diagno)">
       {{ diagno.diagnosticName }}
     </mat-option>
   </mat-select>
@@ -26,10 +26,10 @@
 
        <mat-tab label="Caracateristicas">
          <div class="patron"> 
-        <p> <a class="negro">Definicion:</a>  {{ Vdefinicion }} </p>
+        <p> <a class="negro">Definicion:</a>  {{ definicion }} </p>
           <div>
             <ul>
-              <li *ngFor="let diagno of Vcaracteristicas">{{ diagno }}</li>
+              <li *ngFor="let diagno of listaCaracteristicas">{{ diagno }}</li>
             </ul>
           </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="nocMargen">
         <mat-form-field class="example-full">
           <mat-select id="noc" formControlName="noc" placeholder="Seleccione un noc">
-            <mat-option *ngFor="let noc of Vnoc" [value]="noc" (click)="nocMetodo(noc)">
+            <mat-option *ngFor="let noc of listaNoc" [value]="noc" (click)="obtenerNoc(noc)">
               {{ noc.nocName }}
             </mat-option>
           </mat-select>
@@ -49,7 +49,7 @@
 <br>
              <div>
                 <ul>
-                  <li *ngFor="let ind of Vindicadores">{{ ind.indicatorDescription }}</li>
+                  <li *ngFor="let ind of listaIndicadores">{{ ind.indicatorDescription }}</li>
                 </ul>
              </div>
       </div>
@@ -58,7 +58,7 @@
       <mat-tab label="Nic">
           <mat-form-field>
               <mat-select id="nicName" formControlName="nic" placeholder="Seleccione un nombre">
-                <mat-option *ngFor="let nic of Vnic" [value]="nic" (click)="nicMetodo(nic)" >
+                <mat-option *ngFor="let nic of listaNic" [value]="nic" (click)="obtenerNic(nic)" >
                   {{ nic.nicName }}
                 </mat-option>
               </mat-select>
@@ -67,7 +67,7 @@
             <br>
              <div>
                 <ul>
-                  <li *ngFor="let act of actividades">{{ act}}</li>
+                  <li *ngFor="let act of listaActividades">{{ act}}</li>
                 </ul>
              </div>
 
@@ -76,6 +76,6 @@
     </mat-tab-group>
   </mat-card-content>
 
-  <button mat-fab class="david" [disabled]="!formulario.valid" color="primary" (click)="guardar()"><mat-icon>save</mat-icon></button>
+  <button mat-fab class="david" [disabled]="!formulario.valid" color="primary" (click)="guardarDiagnostico()"><mat-icon>save</mat-icon></button>
   </form>
 </div>

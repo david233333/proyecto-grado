@@ -3,11 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import { nocs } from '../../domain/models/nocs/entity/nocs';
+import { nocsGatewayAbstract } from '../../domain/models/nocs/gateway/nocs-gateway.abstract';
 
 @Injectable()
-export class NocsService {
+export class NocsService extends nocsGatewayAbstract{
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    super();
+  }
 
   nocsUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/noc/';
 

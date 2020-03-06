@@ -1,7 +1,7 @@
 import { MatDialog } from '@angular/material';
 import { Component, OnInit, Input } from '@angular/core';
-import { respuestasFinalesServices } from '../../infraestructure/respuestasFinales.service';
-import { RespuestaFinal } from '../../domain/models/respuestasAlarmas/entity/respuestaAlarma';
+import { respuestasFinalesServices } from '../../infraestructure/respuestasFinales/respuestasFinales.service';
+import { RespuestaFinal } from '../../domain/models/respuestasAlarmas/entity/respuestaFinales';
 import { preguntaList } from '../../domain/models/listaPreguntas/entity/preguntaList';
 import { Observable } from 'rxjs/Observable';
 import { preguntaAlarma } from '../../domain/models/preguntasAlarmas/entity/preguntasAlarma';
@@ -30,7 +30,6 @@ export class RespuestasFinalesComponent implements OnInit {
       }
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 

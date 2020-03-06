@@ -58,8 +58,7 @@ export class MainContentComponent implements OnInit {
    let convert = id.toString();
     this.caa.getCaayById(convert)
     .subscribe(data=>{
-      this.auto = data;
-      console.log("este es el caa",this.auto)  
+      this.auto = data; 
   })
   }
 
@@ -69,7 +68,7 @@ export class MainContentComponent implements OnInit {
      this.frami.getFramiById(convert)
      .subscribe(data=>{
        this.framig = data;
-       console.log("este es el framinghan",this.framig)  
+     
    })
    }
 
@@ -79,7 +78,7 @@ export class MainContentComponent implements OnInit {
      this.alarma.getEmailId(convert)
      .subscribe(data=>{
        this.emails = data;
-       console.log("este es el email",data)  
+       
    })
    }
 
@@ -88,7 +87,7 @@ export class MainContentComponent implements OnInit {
     let convert = idP.toString();
      this.visu.getId(convert)
      .subscribe(data=>{
-       console.log("esta es la visualizacion",data)
+   
        this.visus = data;
    })
    }

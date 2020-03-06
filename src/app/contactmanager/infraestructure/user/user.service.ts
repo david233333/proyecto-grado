@@ -42,11 +42,10 @@ export class UserService {
 
     return this.http.get<User[]>(usersUrl)
       .subscribe(data => {
-        console.log("data",data)
+      
         this.dataStore.users = data;
         this._users.next(Object.assign({}, this.dataStore).users);
       }, error => {
-        console.log("Failed to fetch users");
       });
   }
 

@@ -16,18 +16,18 @@ import { DiagnosticoFinalService } from '../../infraestructure/diagnosticoFinal/
 export class DiagnosticoFinalComponent implements OnInit {
   
   
- Vdominios: any[] = [];
- Vdiagnosticos: any[] = [];
- Vcaracteristicas:any[] =[];
- Vdefinicion :string; 
- VdiagnosticId : string;
- Vnoc: any[] = [];
- Vindicadores: any[] = [];
- Vnic: any[] = [];
+ listaDominios: any[] = [];
+ listaDiagnosticos: any[] = [];
+ listaCaracteristicas:any[] =[];
+ definicion :string; 
+ diagnosticId : string;
+ listaNoc: any[] = [];
+ listaIndicadores: any[] = [];
+ listaNic: any[] = [];
  documento:string;
- VdiagnosticCode : string;
+ diagnosticCode : string;
  nocCode:string;
- actividades: any[]=[];
+ listaActividades: any[]=[];
 
  @Input() framighamV: framinhgam;
 
@@ -52,61 +52,58 @@ export class DiagnosticoFinalComponent implements OnInit {
   }
 
   public Dominios(){    
-     this.dominios.getDominios().subscribe(data=>{ 
-       this.Vdominios = data;
+     this.dominios.getDomains().subscribe(data=>{ 
+       this.listaDominios = data;
    })
    }
   
    diagnosticos(domainName:string){
-    this.diagnostico.getDiganosticos(domainName).subscribe(data=>{ 
-      this.Vdiagnosticos = data;
+    this.diagnostico.getDiganostics(domainName).subscribe(data=>{ 
+      this.listaDiagnosticos = data;
    })
   }
 
   obeternerNocs(id:string){
     this.nocs.getNocsById(id).subscribe(data=>{ 
-      this.Vnoc = data;
+      this.listaNoc = data;
    })
   }
 
   obternerNics(id:string){
     this.nics.getNicsId(id).subscribe(data=>{ 
-    this.Vnic = data;
+    this.listaNic = data;
    })
   }
 
-  mandar(nombre:string){
+  obternerDominio(nombre:string){
     this.diagnosticos(nombre);
     
   }
   
-  mandar2(diagno){
-    this.Vdefinicion = diagno.diagnosticDefinition;
-    this.Vcaracteristicas = diagno.caracteristicsList;
-    this.VdiagnosticId = diagno.diagnosticId;
-    this.VdiagnosticCode = diagno.diagnosticCode;
-    this.obeternerNocs(this.VdiagnosticId);
-    this.obternerNics(this.VdiagnosticId);
+  obtenerDiagnostico(diagno){
+    this.definicion = diagno.diagnosticDefinition;
+    this.listaCaracteristicas = diagno.caracteristicsList;
+    this.diagnosticId = diagno.diagnosticId;
+    this.diagnosticCode = diagno.diagnosticCode;
+    this.obeternerNocs(this.diagnosticId);
+    this.obternerNics(this.diagnosticId);
 
   }
-  nocMetodo(noc){
-  
-    this.Vindicadores = noc.indicatorsList;
+  obtenerNoc(noc){
+    this.listaIndicadores = noc.indicatorsList;
     this.nocCode = noc.nocCode;
 
   }
 
-  guardar(){
-    this.dx.EnviarFinal(this.formulario.value).subscribe(data => { 
+  guardarDiagnostico(){
+    this.dx.sendDiagnosticFinal(this.formulario.value).subscribe(data => { 
       alert("se guardo correctamente!!");
       window.location.reload()
    })   
   }
 
-  nicMetodo(nic){
-    this.actividades = nic.activitiesList;
+  obtenerNic(nic){
+    this.listaActividades = nic.activitiesList;
   }
-
-
 
 }

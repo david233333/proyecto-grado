@@ -22,7 +22,7 @@ export class NotesComponent implements OnInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-    console.log("notes",this.caa)
+  
   }
 
   ngOnInit() {

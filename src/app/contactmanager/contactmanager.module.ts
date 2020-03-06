@@ -27,7 +27,7 @@ import { nicService } from './infraestructure/nics/nics.service';
 import { DiagnosticoFinalService } from './infraestructure/diagnosticoFinal/diagnosticoFinal.service';
 import { VisualizarService } from './infraestructure/visualizar.service';
 import { RespuestasFinalesComponent } from './components/respuestas-finales/respuestas-finales.component';
-import { respuestasFinalesServices } from './infraestructure/respuestasFinales.service';
+import { respuestasFinalesServices } from './infraestructure/respuestasFinales/respuestasFinales.service';
 
 
 

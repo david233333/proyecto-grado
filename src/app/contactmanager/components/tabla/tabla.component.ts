@@ -9,10 +9,10 @@ import { DominiosService } from '../../infraestructure/dominios/dominios.service
 })
 export class TablaComponent  {
  
-  Vdominios: any[] = [];
-  Vdiagnosticos: any[] = [];
-  Vcaracteristicas:any[] =[];
-  Vdefinicion :string; 
+  listaDominios: any[] = [];
+  listDiagnosticos: any[] = [];
+  listCaracteristicas:any[] =[];
+  definicion :string; 
  
  
    constructor(private dominios:DominiosService, 
@@ -25,24 +25,24 @@ export class TablaComponent  {
    }
  
    Dominios(){    
-      this.dominios.getDominios().subscribe(data=>{ 
-      this.Vdominios = data;    
+      this.dominios.getDomains().subscribe(data=>{ 
+      this.listaDominios = data;    
     })
     }
    
     diagnosticos(domainName:string){
-     this.diagnostico.getDiganosticos(domainName).subscribe(data=>{ 
-       this.Vdiagnosticos = data;
+     this.diagnostico.getDiganostics(domainName).subscribe(data=>{ 
+       this.listDiagnosticos = data;
     })
    }
   
-   mandar(nombre:string){
+   obtenerDominio(nombre:string){
      this.diagnosticos(nombre);
    }
    
-   mandar2(diagno){
-     this.Vdefinicion = diagno.diagnosticDefinition;
-     this.Vcaracteristicas = diagno.caracteristicsList;
+   obtenerDiagnostico(diagno){
+     this.definicion = diagno.diagnosticDefinition;
+     this.listCaracteristicas = diagno.caracteristicsList;
    }
    
   } 

@@ -16,7 +16,7 @@ export class ModalAlarmaComponent implements OnInit {
      }
 
   ngOnInit() {
-    console.log("este es el documento:", this.data.documento)
+   
     this.formulario = this.fb.group({
 
       documentNumber: [this.data.documento, [Validators.required, Validators.minLength(3)]],
@@ -27,10 +27,10 @@ export class ModalAlarmaComponent implements OnInit {
     })
   }
 
-public save():void {
+public save() {
 
     this.alar.sendEmail(this.formulario.value).subscribe(data => {
-      this.dialogRef.close();
+      this.dialogRef.close(true);
     })
  }
 

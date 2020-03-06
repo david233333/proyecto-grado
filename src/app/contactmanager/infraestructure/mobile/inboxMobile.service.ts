@@ -3,12 +3,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { alarma } from '../../domain/models/alarmas/entity/alarmas';
 import { Observable } from 'rxjs/Observable';
+import { mobileGatewayAbstract } from '../../domain/models/mobile/gateway/mobile-gateway.abstract';
 
 @Injectable()
-export class mobileService {
+export class mobileService extends mobileGatewayAbstract{
+ 
 
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    super();
+  }
 
   inboxUrl = 'https://back-selfcareapp.herokuapp.com/selfcare/inboxMobile';
  
@@ -16,13 +20,10 @@ export class mobileService {
   getEmailId(id: String): Observable<alarma> {
     return this.http.get<alarma>(this.inboxUrl+id)
   }
-  
-  EnviarEmail(message: mobile ) : Observable<mobile>{
+
+  sendEmail(message: mobile): Observable<mobile> {
     const Url = 'https://back-selfcareapp.herokuapp.com/selfcare/email';
     return this.http.post<mobile>(Url,message);
   }
- 
-
-
-
+  
 }

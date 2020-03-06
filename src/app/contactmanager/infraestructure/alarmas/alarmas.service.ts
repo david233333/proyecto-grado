@@ -24,11 +24,5 @@ export class AlarmasService extends alarmsGatewayAbstract {
     return this.http.post<alarma>(Url,alarm);
   }
   
-  /*Enviar(alar: alarma ) : Observable<alarma>{
-    const Url = 'https://back-selfcareapp.herokuapp.com/selfcare/message';
-    return this.http.post<alarma>(Url,alar);
-  }*/
-
-
 
 }
